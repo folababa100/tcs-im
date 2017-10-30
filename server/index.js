@@ -1,14 +1,14 @@
-const path = require('path');
 const http = require('http');
+const path = require('path');
 const express = require('express');
 const socketIO = require('socket.io');
 
-const { generateMessage, generateLocationMessage } = require('./utils/message');
+const { generateMessage } = require('./utils/message');
 const { isRealString } = require('./utils/validation');
 const { Users } = require('./utils/users');
 
-var users = new Users();
 var app = express();
+var users = new Users();
 
 app.use(express.static(path.join(__dirname, '../static')));
 app.use(express.static(path.join(__dirname, '../node_modules/jquery/dist')));
