@@ -23,10 +23,10 @@ io.on('connection', socket => {
     clients++;
     console.log(`New user Connected, Total: ${clients}`);
 
-    // socket.broadcast.emit("newMessage", generateMessage("Amdin", "A new user joined"));
+    // socket.broadcast.emit("newMessage", generateMessage("Admin", "A new user joined"));
 
-    socket.on('leaveRoom', (paramz, cb) => {
-        socket.leave(paramz.room);
+    socket.on('leaveRoom', (params, cb) => {
+        socket.leave(params.room);
 
         var user = users.removeUser(socket.id);
         if (user) {

@@ -1,7 +1,7 @@
-const express = require("express"),
-    app = express(),
-    http = require('http').Server(app),
-    io = require('socket.io')(http);
+const express = require("express")
+var app = express()
+const http = require('http').Server(app)
+const io = require('socket.io')(http);
 
 
 app.use(express.static(__dirname + '/node_modules'));
